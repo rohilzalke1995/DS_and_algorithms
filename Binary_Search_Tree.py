@@ -94,27 +94,6 @@ class BinarySearchTree:
         sum = self.data + left_sum + right_sum
         return sum
     
-    def delete_node(self, val):
-        if val < self.data:
-            if self.left:
-                self.left.delete_node(val)
-            
-        if val > self.data:
-            if self.right:
-                self.right.delete_node(val)
-            
-        else:
-            if self.left is None and self.right is None:
-                return None
-            if self.left is None:
-                return self.right
-            if self.right is None:
-                return self.right
-            
-            min_val = self.right.find_min()
-            self.data = min_val
-            self.right = self.right.delete_node(min_val)
-        return self
             
             
 def build_tree(elements):
@@ -132,5 +111,5 @@ tree = build_tree(ele)
 print(tree.find_max())
 print(tree.find_min())
 print(tree.calculate_sum())
-tree = tree.delete_node(2)
+
 print(tree.preorder_traverse())

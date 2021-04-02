@@ -23,7 +23,6 @@ def swap(a, b, array):
         array[a] = array[b]
         array[b] = temp
 
-
 def partition(element, start, end):
     pivot = start
     pivot_element = element[pivot]
